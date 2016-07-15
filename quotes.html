@@ -7,21 +7,70 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script>
+			
+			
+			$(document).ready(function(){
+			$("#button").click(function(){
+				getquote();
+				
+			});
+			});
+			
 			function getquote(){
-			var quote= new Array();
-			 quote[0] = 'HTML for quote number 1'
-			quote[1] = 'HTML for quote number 2'
-			quote[2] = 'HTML for quote number 3'
-			quote[3] = 'HTML for quote number 4'
-			var randomquote = Math.floor(Math.random()*(quote.length));
-			document.getElementById("quote").innerHTML=quote[randomquote];
+			/*var quote= new Array();
+			 quote[0] = 'If i want to concentrate my mind upon a point,it goes there and the moment when i call,it is free again" - Swami Vivekananda'
+			quote[1] = 'Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning. -Albert Einstein'
+			quote[2] = 'The biggest risk is not taking any risk... In a world that is changing really quickly, the only strategy that is guaranteed to fail is not taking risks. -Mark Zuckerberg'
+			quote[3] = 'In a day, when you don\'t come across any problems - you can be sure that you are travelling in a wrong path– Swami Vivekananda'
+			*/
+			var images= ['sachin.jpg','bill.jpg','gandhi.jpg','apj.jpg','Arnold.jpg'];
+			var randomquote = Math.floor(Math.random()*(images.length));
+			//document.getElementById("quote").innerHTML=quote[randomquote];
+			document.getElementById("quoteimage").src=images[randomquote];
 			}
 			
 		</script>
+		<style>
+			.container-fluid{
+			background-color:black;
+			}
+			.block{
+				margin: 70px 200px 80px 400px;
+				padding: 10px 20px 200px 20px;
+				border: black bold;
+				background-color:black;
+				height:600px;
+				width:600px;
+			}
+			img{
+			height:400px;
+			width:400px;
+			padding-bottom:100px;
+			}
+			#button{
+			margin-bottom:30px;
+			}
+		</style>
+		
 	</head>
 	<body>
-		<p id="quote"></p>
-		<button onclick="getquote()">Get quote</button>
+		<div class="container-fluid text-center">
+			<div class="block text-center id="block">
+			
+			<img src="gandhi.jpg" id="quoteimage" alt="images"/>
+			<br>
+			<div class="btn btn-default" id="button">
+			Get Quote
+			</div>
+			<h3> Contact Details</h3>
+			<div >
+				<button class="btn btn-default"><a href="https://in.linkedin.com/in/parvinder09" target="_blank">Linkedin</a></button>
+				<button class="btn btn-danger"><a href="http://www.facebook.com/parvinder09" target="_blank">Facebook</a></button>
+				<button class="btn btn-info"><a href="http://www.twitter.com" target="_blank">Twitter</a></button>
+				<button class="btn btn-warning"><a href="http://www.freecodecamp.com/parvinder09" target="_blank">Freecodecamp</a></button>
+			</div>
+			</div>
+		</div>
 	</body>
 	
 </html>
